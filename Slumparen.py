@@ -1,11 +1,33 @@
 import random
 
-Fornamn = ["Isak", "John", "Elsa", "Moa", "Kalle"]
+loop = (1)
 
-Efternamn = ["Johansson", "Eriksson", "Karlsson", "Svensson", "Strömberg"]
+while loop == (1):
+    val = input("Vill du ha ett slumpat namn och efternamn eller slumpade kläder? \n>[Namn] eller [Kläder]\n>>>")
+    
+    if val.lower() == ("namn"):
+        fornamn = ["Isak", "John", "Elsa", "Moa", "Kalle"]
 
-for i in range(0, 5):
-    Fornamnval = random.randint(0, len(Fornamn)-1)
-    Efternamnval = random.randint(0, len(Efternamn)-1)
+        efternamn = ["Johansson", "Eriksson", "Karlsson", "Svensson", "Strömberg"]
 
-print (f"Din vänn heter {Fornamn[Fornamnval]} {Efternamn[Efternamnval]}")
+        for i in range(0, 5):
+            fornamnval = random.randint(0, len(fornamn)-1)
+            efternamnval = random.randint(0, len(efternamn)-1)
+
+        print (f"Namnet blev {fornamn[fornamnval]} {efternamn[efternamnval]}")
+        loop = (0)    
+
+    elif val.lower() == ("kläder"):
+        overkropp = ["T-shirt", "luvtröja", "långärmad tröja", "skjorta"]
+
+        underkropp = ["jeans", "cargobyxor", "shorts", "mjukisbyxor"]
+
+        for i in range(0, 4):
+            overkroppval = random.randint(0, len(overkropp)-1)
+            underkroppval = random.randint(0, len(underkropp)-1)
+        print (f"Du borde ha på dig en {overkropp[overkroppval]} och {underkropp[underkroppval]}")
+        loop = 0
+
+    else:
+        print ("Snälla välj ett av de två valen som ges")
+        continue
